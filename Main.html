@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="TECH STORE" content="We are here for you">
+    <link rel="stylesheet" href="Main style.css">
+    <!-- <script src="../javascript.js"></script> -->
+    <title>TECH STORE</title>
+    <style>
+        /*Header NAV*/
+        body{
+            margin: 0px;
+        }
+        .header {
+            position: fixed;
+            width: 100%;
+            background-color: #eee;
+            margin-top: -8px;
+            z-index: 1;
+        }
+
+        p{
+            font-family: Arial;
+        }
+
+        .logo-nav {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            margin: 0px;
+            height: 174px;
+        }
+
+        .name_page a img {
+            padding: 50px;
+        }
+
+        .search{
+            padding-top: 50px; 
+            margin-top: 10px;
+        }
+        .search input {
+            color: black;
+            width: 550px;
+            height: 55px;
+            border-style: none;
+            border-radius: 20px;
+            font-size: 20px;
+            padding-left: 15px;
+        }
+
+        .search input:hover {
+            background-color: #fff;
+            border: solid 2px;
+        }
+
+        .search input:focus {
+            background-color: #fff;
+            border: solid 1px;
+        }
+        .icons {
+            display: flex;
+            justify-content: flex-end;
+            column-gap: 15px;
+            padding: 50px;
+        }
+
+        .icons img {
+            height: 35px;
+            width: 35px;
+            border: none;
+            border-radius: 10px;
+            background-color: #68badf ;
+            padding: 15px;
+        }
+
+        .notification{
+            display: none;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: red;
+            top: 60px;
+            right: 60px;
+            z-index: 0;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .icons a img:hover {
+            background-color: #ffffff;
+        }
+
+        /*Product NAV*/
+        .components-nav {
+            display: flex;
+            column-gap: 65px;
+            background-color: #212121;
+            justify-content: center;
+            height: auto;
+        }
+
+        /*PC_Components*/
+        .PC_Components {
+            position: relative;
+            display: block;
+        }
+
+        .Componentsbtn {
+            background-color: #212121;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+            
+        .PC_Components-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .PC_Components-content a {
+            color: black;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .PC_Components-content a:hover {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .Componentsbtn:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .PC_Components:hover .PC_Components-content {
+            display: block;
+        }
+
+        /* M_B MENU */
+        .m_b-content {
+            position: relative;
+        }
+
+        .m_b-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .m_b:hover .m_b-content {
+            display: block;
+        }
+
+        /* CPU MENU */
+        .CPU-content {
+            position: relative;
+        }
+
+        .CPU-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: calc(100% / 9);
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .CPU:hover .CPU-content {
+            display: block;
+        }
+
+        /* GPU MENU */
+        .GPU-content {
+            position: relative;
+        }
+
+        .GPU-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 84px;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .GPU:hover .GPU-content {
+            display: block;
+        }
+
+        /* Coolling Solution */
+        .Coolling_Solution-content {
+            position: relative;
+        }
+
+        .Coolling_Solution-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: calc(100% / 3);
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .Coolling_Solution:hover .Coolling_Solution-content {
+            display: block;
+        }
+
+        /*Laptop*/
+        .Laptop {
+            position: relative;
+            display: block;
+        }
+
+        .Laptopbtn {
+            background-color : #212121;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .Laptop-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .Laptop-content a {
+            color: rgb(0, 0, 0);
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .Laptop-content a:hover {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .Laptopbtn:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .Laptop:hover .Laptop-content {
+            display: block;
+        }
+
+        /*Accessories*/
+        .Accessories {
+            position: relative;
+            display: block;
+        }
+
+        .Accessoriesbtn {
+            background-color: #212121;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .Accessories-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .Accessories-content a {
+            color: black;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .Accessories-content a:hover {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .Accessoriesbtn:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .Accessories:hover .Accessories-content {
+            display: block;
+        }
+
+        /*Monitor*/
+        .Monitor {
+            position: relative;
+            display: block;
+        }
+
+        .Monitorbtn {
+            background-color: #212121;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .Monitorbtn:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        /*MAIN CONTENT*/
+        .main {
+            padding-top: 215px;
+            margin-bottom: 8px;
+            display: grid;
+            grid-template-columns: 20% 79%;
+            column-gap: 1%;
+        }
+        .sidebar{
+            background-color: #eee;
+            border: solid black;
+            border-radius: 25px;
+            height: 100%;
+            margin-left: 3px;
+        }
+        .sidebar p{
+            text-align: center;
+        }
+
+        .main .content{
+            display: block;
+            width: 100%;
+        }
+
+        /* Product Sections */
+        .product-section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #212121;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #68badf;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #212121;
+        }
+
+        .product-price {
+            font-size: 20px;
+            color: #68badf;
+            font-weight: bold;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            background-color: #68badf;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #4a9cc0;
+        }
+
+        /*Footer*/
+        .footer {
+            display: grid;
+            grid-template-columns: calc(100%/3) calc(100%/3) calc(100%/3);
+            background-color: #68badf;
+            padding: 50px 0; 
+            margin-top: 4rem;
+        }
+
+        .footer .slogan {
+            color: #F3F3F3;
+            font-size: 20px;
+            padding-left: 35px;
+
+        }
+
+        .footer .slogan:hover {
+            color: black;
+        }
+
+        .footer .footer1 {
+            justify-content: center;
+            
+
+        }
+
+        .footer .footer1 a:link {
+            color: #F3F3F3;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .footer .footer1 a:visited {
+            text-decoration: none;
+            color: #F3F3F3;
+        }
+
+        .footer .footer1 a:hover,
+        .footer .footer1 p:hover {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .footer .footer1 a:active {
+            text-decoration: none;
+        }
+        
+        .footer .footer2 a:link {
+            color: #F3F3F3;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .footer .footer2 a:visited {
+            text-decoration: none;
+            color: #F3F3F3;
+        }
+
+        .footer .footer2 a:hover,
+        .footer .footer2 p:hover {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .footer .footer1 a:active {
+            text-decoration: none;
+        }
+
+        .DRA {
+            font-size: 20px;
+            color: #F3F3F3;
+        }
+
+        .DRA:hover {
+            color: black;
+        }
+
+</style>
+</head>
+
+
+<body>
+    <div class="header">
+        <header>
+            <div class="logo-nav" title="TECH STORE">
+                <div class="name_page">
+                    <a href="Main.html">
+                        <img src="../LOGO.png">
+                </div>
+                <div class="search">
+                    <input type="search" placeholder="...Search" autocomplete="off">
+                </div>
+                <div class="icons">
+                    <div class="about_us" title="About us">
+                        <a href="#footer">
+                            <img src="../ICONS/contact_support_50dp_000000_FILL0_wght400_GRAD0_opsz48.png" alt="about_us">
+                        </a>
+                    </div>
+                    <div class="contact_us" title="Contact us">
+                        <a href="../Contactus/contactus.html" target="_blank">
+                            <img src="../ICONS/contact_page_50dp_000_FILL0_wght400_GRAD0_opsz48.png" alt="Contact">
+                        </a>
+                    </div>
+                    <div class="login" title="Login">
+                        <a href="../Log in/Login.html" target="_blank">
+                            <img src="../ICONS/login_50dp_000000_FILL0_wght400_GRAD0_opsz48.png" alt="Login">
+                        </a>
+                    </div>
+                    <div class="cart" title="Cart">
+                        <div class="notification" id="notification">0</div>
+                        <a href="../Cart/cart.html" target="_blank">
+                            <img src="../ICONS/shopping_cart_50dp_000000_FILL0_wght400_GRAD0_opsz48.png" alt="Cart">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="components-nav">
+                <div class="PC_Components">
+                    <button class="Componentsbtn">
+                        Components
+                    </button>
+                    <div class="PC_Components-content">
+                        <div class="m_b">
+                            <a href="#">Mother board</a>
+                            <div class="m_b-content">
+                                <a href="../content/components/m-b/Intel/Intel.htm" target="_self">
+                                    Intel
+                                </a>
+                                <a href="../content/components/m-b/AMD/AMD.htm" target="_self">
+                                    AMD
+                                </a>
+                            </div>
+                        </div>
+                        <div class="CPU">
+                            <a href="#">CPU</a>
+                            <div class="CPU-content">
+                                <a href="../content/components/CPU/Intel/intel.htm" target="_self">
+                                    Intel
+                                </a>
+                                <a href="../content/components/CPU/AMD/AMD.htm" target="_self">
+                                    AMD
+                                </a>
+                            </div>
+                        </div>
+                        <div class="GPU">
+                            <a href="#">GPU</a>
+                            <div class="GPU-content">
+                                <a href="../content/components/GPU/Nvidea/Nvidea.htm" target="_self">
+                                    NVIDIA
+                                </a>
+                                <a href="../content/components/GPU/AMD/AMD.htm" target="_self">
+                                    AMD
+                                </a>
+                            </div>
+                        </div>
+                        <div class="Coolling_Solution">
+                            <a href="#">Coolling Solution</a>
+                            <div class="Coolling_Solution-content">
+                                <a href="../content/components/Cooling Solution/AIR Cooler/AIR Cooler.htm" target="_self">
+                                    AIR Cooler
+                                </a>
+                                <a href="../content/components/Cooling Solution/Liqued Cooler/Liqued Cooler.htm" target="_self">
+                                    Liquid Cooler
+                                </a>
+                            </div>
+                        </div>
+                        <a href="../content/components/RAM/RAM.htm" target="_self">
+                            RAM
+                        </a>
+                        <a href="../content/components/HDD/HDD.htm" target="_self">
+                            HDD
+                        </a>
+                        <a href="../content/components/SSD/SSD.htm" target="_self">
+                            SSD
+                        </a>
+                        <a href="../content/components/Case/Case.htm" target="_self">
+                            Case
+                        </a>
+                        <a href="../content/components/Power-supply/Power-supply.htm" target="_self">
+                            Power Supply
+                        </a>
+                    </div>
+                </div>
+                <div class="Laptop">
+                    <button class="Laptopbtn">
+                        Laptop
+                    </button>
+                    <div class="Laptop-content">
+                        <a href="../content/Laptop/MSI/MSI.htm" target="_self">
+                            MSI
+                        </a>
+                        <a href="../content/Laptop/ASUS/ASUS.htm" target="_self">
+                            ASUS
+                        </a>
+                        <a href="../content/Laptop/Business/Business.htm" target="_self">
+                            Business
+                        </a>
+                    </div>
+                </div>
+                <div class="Monitor">
+                    <a href="../content/Monitor/Monitor.html" target="_self">
+                        <button class="Monitorbtn">
+                            Monitor
+                        </button>
+                    </a>
+                </div>
+                <div class="Accessories">
+                    <button class="Accessoriesbtn">
+                        Accessories
+                    </button>
+                    <div class="Accessories-content">
+                        <a href="../content/components/Accessories/Mouse/Mouse.htm" target="_self">
+                            Mouse
+                        </a>
+                        <a href="../content/components/Accessories/Keyboard/Keyboard.htm" target="_self">
+                            Keyboard
+                        </a>
+                        <a href="../content/components/Accessories/Speakers/Speakers.htm" target="_self">
+                            Speakers
+                        </a>
+                        <a href="../content/components/Accessories/Mouse Pad/Mouse Pad.htm" target="_self">
+                            Mouse Pad
+                        </a>
+                        <a href="../content/components/Accessories/Headphones/Headphones.htm" target="_self">
+                            Headphones
+                        </a>
+                        <a href="../content/components/Accessories/Cables & Converters/Cables & Converters.htm" target="_self">
+                            Cables &amp; Converters
+                        </a>
+                    </div>
+                </div>
+            </div> 
+        </header>
+    </div>
+    <div class="main">
+    
+       
+    </div>
+        <div class="content">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Smart Looks, Smarter Performance</h1>
+                    <p>Experience the perfect blend of innovation and elegance with our stunning tech collection</p>
+                    <a href="#products" class="cta-button">Explore Products</a>
+                </div>
+                <div class="hero-image">
+                    <img src="logo.png" alt="  Tech products">
+                </div>
+            </section>
+        
+            <section class="features">
+                <div class="feature">
+                    <i class="tech-innovation"></i>
+                    <h3>Cutting-Edge Technology</h3>
+                    <p>Our products feature the latest innovations to deliver unmatched performance and efficiency.</p>
+                </div>
+                <div class="feature">
+                    <i class="eco-friendly-materials"></i>
+                    <h3>Sustainable Components</h3>
+                    <p>Made from post-consumer recycled materials whenever possible.</p>
+                </div>
+                <div class="feature">
+                    <i class="green-shipping"></i>
+                    <h3>Carbon-Neutral Shipping</h3>
+                    <p>We offset all shipping emissions.</p>
+                </div>
+            </section>
+        
+            <section class="products" id="products">
+                <h2>Our Hot deals</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="Asus-1/Asus-ROG-Strix-G17-G713PV-HX174W-Gaming-Laptop_01.jpg" alt="Asus ROG Strix G17 G713PV-HX174W Gaming Laptop" class="product-image">
+                        <h3 id="product-name1">Asus ROG Strix G17 G713PV-HX174W Gaming Laptop</h3>
+                        <p class="product-description">AMD Ryzen 9 7940HX, 16GB RAM, 1TB SSD, RTX 4060 8GB, 17.3” FHD 144Hz, Win11 + ROG Backpack</p>
+                        <p class="product-price"> <del>70.000.00 EGP</del>   <span>66.000.00 EGP</span>  </p>
+                        <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name1').innerText, 66000.00)">
+  Add to Cart
+</button>
+
+
+
+                    </div>
+                    <div class="product-card"> <img src="msi-1/9S7-17T214-236_01.jpg" alt="MSI Sword 17 HX B14VGKG Gaming Laptop" class="product-image">
+                        <h3  id="product-name2">MSI Sword 17 HX B14VGKG Gaming Laptop</h3>
+                        <p class="product-description">Intel Core I7-14650HX 16GB Ram 1TB SSD Nvidia GeForce RTX 4070 8GB 17" Inch QHD WIN 11 Cosmos GrayASUS ProArt P16 AMD Ryzen AI 9 HX 370- GeForce RTX™4070 8GB- Ram 64GB LPDDR5X- 2TB SSD- 16 INCH 4K Display-WIN 11</p>
+                        <p class="product-price"><del>82.222.00 EGP</del>   <span>70.222.00 EGP</span>  </p>
+                         <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name2').innerText, 70222.00)">
+  Add to Cart
+</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="msi-2/MSI-Sword-16-HX-B13VFKG_01.jpg" alt="MSI Sword 16 HX B13VFKG-687EG Laptop" class="product-image">
+                        <h3  id="product-name3">MSI Sword 16 HX B13VFKG-687EG Laptop </h3>
+                        <p class="product-description">Intel Core i7-13700HX - 16GB Ram - M.2 NVMe 512GB - Nvidia RTX 4060 8GB - 16 Inch FHD+ IPS 144Hz - Win11 - Cosmos Gray</p>
+                        <p class="product-price"><del>60.666.00 EGP</del>   <span>54.666.00 EGP</span>  </p>
+                         <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name3').innerText, 54666.00)">
+  Add to Cart
+</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="ram2/Corsair-Dominator-Titanium-RGB-96GB-2x48GB-DDR5-DRAM-6600MHz-CL32-Intel-XMP-Memory-Kit-White_01_feb06c48-d06e-41f3-b5b1-6493e85be018.webp" alt="Corsair Dominator Titanium" class="product-image">
+                        <h3  id="product-name4">Corsair Dominator Titanium</h3>
+                        <p class="product-description">RGB 96GB 2x48GB DDR5 DRAM 6600MT/S CL32 Intel XMP Memory Kit White</p>
+                        <p class="product-price"> <del>22,500.00 EGP</del>   <span> 20,500.00 EGP</span>  </p>
+                         <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name4').innerText,  20500.00)">
+  Add to Cart
+</button>
+                    </div> 
+                    <div class="product-card">
+                        <img src="Mouse-8/Meetion-M915-Backlight-Wired_01.jpg" alt="Meetion M915" class="product-image">
+                        <h3  id="product-name5">Meetion M915</h3>
+                        <p class="product-description">Backlight Wired Gaming Mouse    </p>
+                        <p class="product-price"> <del>275.00 EGP</del>   <span>190.00 EGP</span>  </p>
+                         <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name5').innerText, 190.00 )">
+  Add to Cart
+</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="monitor3/ROG-PG48UQ_01.jpg" alt="ASUS MONITOR  |  SKU: 90LM0840-B01970" class="product-image">
+                        <h3 id="product-name6"> ASUS MONITOR  |  SKU: 90LM0840-B01970</h3>
+                        <p class="product-description">ASUS ROG Swift OLED PG48UQ 48 Inch Gaming Monitor</p>
+                        <p class="product-price"> <del>90,000.00 EGP</del>   <span>84,000.00 EGP</span>  </p>
+                         <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name6').innerText, 84000.00 )">
+  Add to Cart
+</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="monitor6/PG49WCD_01.jpg" alt="ASUS ROG Swift OLED PG49WCD" class="product-image">
+                        <h3 id="product-name7">ASUS ROG Swift OLED PG49WCD</h3>
+                        <p class="product-description">gaming monitor 49-inch (5120x1440) curved QD-OLED panel, 144 Hz, 0.03 ms, G-SYNC   </p>
+                        <p class="product-price"> <del>75,000.00 EGP</del>   <span>70,000.00 EGP</span>  </p>
+                         <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name7').innerText, 70000.00)">
+  Add to Cart
+</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="H-P-1/HEADPHONE-GIGAMAX-GM-530_01.jpg" alt="GIGAMAX GM530 Headset  " class="product-image">
+                        <h3 id="product-name8">GIGAMAX GM530 Headset                        </h3>
+                        <p class="product-description">Stereo Headphones</p>
+                        <p class="product-price"> <del>450.00 EGP</del>   <span>290.00 EGP</span>  </p>
+                         <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name8').innerText, 290.00)">
+  Add to Cart
+</button>
+                    </div>
+                   
+                  
+        </div>
+      
+</div>
+<section class="products" id="products">
+    <h2>Most selling🛒</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="Asus-7/ASUS-ROG-Zephyrus-G16-_2024__02_fc253b98-9962-4c75-a8a0-4a7f1c8f7c92.jpg" alt="ASUS ROG Zephyrus G16 (2024) GU605WI-R9321G GAMING LAPTOP" class="product-image">
+            <h3 id="product-name9">ASUS ROG Zephyrus G16 GU605WI-R9321G GAMING LAPTOP </h3>
+            <p class="product-description">AMD Ryzen AI 9 HX 370 32GB RAM 1TB SSD NVIDIA GeForce RTX 4070 16" OLED WIN 11</p>
+            <p class="product-price">132.222.00 EGP</p>
+                <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name9').innerText, 132222.00 )">
+  Add to Cart
+</button>
+        </div>
+        <div class="product-card">
+            <img src="msi-5/MSI-Thin-15-B13UCX-Gaming-Notebook_-15.6-FHD-144Hz_-i7-13620H_-Nvidia-RTX-2050-GDDR6-4GB_-PCIe4-512GB-SSD_-DDR4-RAM-16GB-3200MHz_-WiFi-6E_-Win-11-Home-Gray_01.jpg" alt="MSI Thin 15 B13UCX Gaming Laptop" class="product-image">
+            <h3 id="product-name10">MSI Thin 15 B13UCX Gaming Laptop</h3>
+            <p class="product-description">Intel Core I7-13620H 16GB Ram 512GB SSD Nvidia RTX 2050 GDDR6 4GB, PCIe4 WiFi 6E 15.6 FHD 144Hz</p>
+            <p class="product-price">35.555.00 EGP</p>
+                <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name10').innerText, 35555.00  )">
+  Add to Cart
+</button>
+        </div>
+        <div class="product-card">
+            <img src="Mouse-1/FV-55_04.jpg" alt="FOREV USB Mouse" class="product-image">
+            <h3 id="product-name11">FOREV USB Mouse</h3>
+            <p class="product-description">For PC & Laptop - FV-55</p>
+            <p class="product-price">125.00 EGP</p>
+                <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name11').innerText, 125.00 )">
+  Add to Cart
+</button>
+        </div>
+        <div class="product-card">
+            <img src="H-P-8/Gaming-Headset-FANTECH-HG13_02.jpg" alt="FANTECH HG13 CHIEF" class="product-image">
+            <h3 id="product-name12">FANTECH HG13 CHIEF</h3>
+            <p class="product-description">Gaming Headset With 2 Jacks for computer & USB for LED LIGHT            </p>
+            <p class="product-price">600.00 EGP</p>
+                <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name12').innerText, 600.00 )">
+  Add to Cart
+</button>
+        </div>
+        <div class="product-card">
+            <img src="ram8/Viper-Elite-5_04.webp" alt="PATRIOT Viper Elite 5 " class="product-image">
+            <h3 id="product-name13">PATRIOT Viper Elite 5 </h3>
+            <p class="product-description">RGB DDR5 Performance DRAM 6000MHZ WHITE            </p>
+            <p class="product-price">6,999.00 EGP</p>
+                <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name13').innerText, 6999.00  )">
+  Add to Cart
+</button>
+        </div>
+        <div class="product-card">
+            <img src="B-1/ASUS-ProArt-P16-H7606WI-ME139W-AMD-Ryzen-AI-9-HX-370--GeForce-RTX_4070-8GB--Ram-64GB-LPDDR5X--2TB-SSD--16-INCH-4K-Display-WIN-11_01.jpg" alt="ASUS ProArt P16 " class="product-image">
+            <h3 id="product-name14">ASUS ProArt P16 </h3>
+            <p class="product-description">AMD Ryzen AI 9 HX 370- GeForce RTX™4070 8GB- Ram 64GB LPDDR5X- 2TB SSD- 16 INCH 4K Display-WIN 11            </p>
+            <p class="product-price">160,000.00 EGP</p>
+                <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name14').innerText, 160000.00 )">
+  Add to Cart
+</button>
+        </div>
+        <div class="product-card">
+            <img src="monitor4/MPG-491CQP-QD-OLED_01.jpg" alt="MSI MPG 491CQP QD-OLED" class="product-image">
+            <h3 id="product-name15">MSI MPG 491CQP QD-OLED</h3>
+            <p class="product-description">49 Curved OLED Gaming Monitor</p>
+            <p class="product-price">81,999.00 EGP</p>
+                <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name15').innerText, 81999.00 )">
+  Add to Cart
+</button>
+        </div>
+        <div class="product-card">
+            <img src="coller1/AK6-Dual-Digital_03.jpg" alt="XIGMATEK AK6 " class="product-image">
+            <h3 id="product-name16">XIGMATEK AK6 </h3>
+            <p class="product-description"> Dual Digital AIR COOLER</p>
+            <p class="product-price">2,300.00 EGP</p>
+                <button type="button" class="add-to-cart" onclick="addToCart(document.getElementById('product-name16').innerText, 2300.00 )">
+  Add to Cart
+</button>
+        </div>
+    </div>
+</section>
+
+
+</div>
+    <div class="footer" id="footer">
+        <div class="slogan">
+            <p>
+                <h4>
+                    We are computer store,<br>We are trying our best to provide everything for you.
+                </h4>
+            </p>
+        </div>
+        <div class="footer1">
+            <div class="contact_us">
+                <p>
+                    <h4>
+                        <a href="../Contactus/contactus.html" target="_blank">
+                            Just contact us!
+                        </a>
+                    </h4>
+                </p>
+            </div>
+            <div class="Login">
+                <p>
+                    <h4>
+                        <a href="../Log in/Login.html" target="_blank">
+                            Login
+                        </a>
+                    </h4>
+                </p>
+            </div>
+            <div class="registration">
+                <p>
+                    <h4>
+                        <a href="../Registration/registration.html" target="_blank">
+                            Registration
+                        </a>
+                    </h4>
+                </p>
+            </div>
+        </div>
+        <div class="footer2">
+            <div class="Feedback">
+                <p>
+                    <h4>
+                        <a href="../FeedBack/feedback.html" target="_blank">
+                            Complaints or Feedbacks
+                        </a>
+                    </h4>
+                </p>
+            </div>
+            <div class="DRA">
+                <p>
+                    <h4>
+                        DRA : 0000-0000-0000-0000
+                    </h4>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../javascript.js"></script>
+    <script>
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector('#products');
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html> 
