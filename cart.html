@@ -1,0 +1,154 @@
+<html>
+<head>
+    <meta charset="UTF_8">
+    <meta name="TECH STORE" content="We are here for you">
+    <link rel="stylesheet" href="cartstyle.css">
+    <script src="../javascript.js"></script>
+    <title>Cart</title>
+    <style>
+        /*Header NAV*/
+        body{
+            margin: 0px;
+        }
+        .header {
+            position: block;
+            width: 100%;
+            background-color: #eee;
+            margin-top: -8px;
+        }
+
+        .logo-nav {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            margin: 0px;
+            height: 174px;
+        }
+
+        .name_page a img {
+            padding: 50px;
+        }
+
+        .search{
+            padding-top: 50px; 
+            margin-top: 10px;
+        }
+        .search input {
+            color: black;
+            width: 550px;
+            height: 55px;
+            border-style: none;
+            border-radius: 20px;
+            font-size: 20px;
+            padding-left: 15px;
+        }
+
+        .search input:hover {
+            background-color: #fff;
+            border: solid 2px;
+        }
+
+        .search input:focus {
+            background-color: #fff;
+            border: solid 1px;
+        }
+        .icons {
+            display: flex;
+            justify-content: flex-end;
+            column-gap: 15px;
+            padding: 50px;
+        }
+
+        .icons img {
+            height: 35px;
+            width: 35px;
+            border: none;
+            border-radius: 10px;
+            background-color: #68badf ;
+            padding: 15px;
+        }
+
+        .icons a img:hover {
+            background-color: #ffffff;
+        }
+        .notification{
+            display: none;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: red;
+            top: 60px;
+            right: 60px;
+            z-index: 0;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="header">
+            <header>
+                <div class="logo-nav" title="TECH STORE">
+                    <div class="name_page">
+                        <a href="../Main/Main.html">
+                            <img src="../LOGO.png">
+                        </a>
+                    </div>
+                    <div class="search">
+                        <input type="search" placeholder="...Search" autocomplete="off">
+                    </div>
+                    <div class="icons">
+                        <div class="about_us" title="About us">
+                            <a href="#footer">
+                                <img src="../ICONS/contact_support_50dp_000000_FILL0_wght400_GRAD0_opsz48.png" alt="about_us">
+                            </a>
+                        </div>
+                        <div class="contact_us" title="Contact us">
+                            <a href="../Contactus/contactus.html" target="_blank">
+                                <img src="../ICONS/contact_page_50dp_000_FILL0_wght400_GRAD0_opsz48.png" alt="Contact">
+                            </a>
+                        </div>
+                        <div class="login" title="Login">
+                            <a href="../Log in/Login.html" target="_blank">
+                                <img src="../ICONS/login_50dp_000000_FILL0_wght400_GRAD0_opsz48.png" alt="Login">
+                            </a>
+                        </div>
+                        <div class="cart" title="Cart">
+                            <div class="notification" id="notification">0</div>
+                            <a href="../Cart/cart.html" target="_blank">
+                                <img src="../ICONS/shopping_cart_50dp_000000_FILL0_wght400_GRAD0_opsz48.png" alt="Cart">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <hr>
+        <div class="main">
+            <div class="table" id="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><b>Products</b></th>
+                            <th><b>Price</b></th>
+                            <th><b>Remove</b></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td style="text-align: center;"><b>Total</b></td>
+                            <td id="total" style="text-align: center;" colspan="2">0.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="tableButtons">
+                <button type="button" onclick="print()">Check out</button>
+                <button type="button" onclick="remove_all_element()">Reset</button>
+            </div>
+        <script src="../javascript.js"></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,221 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+.container{
+    max-width: 800px;
+    margin: 32px auto;
+    padding: 32px;
+    background-color: white;
+    border-radius: 8px;
+}
+h1 {
+    text-align: center ;
+    color: #1a4874;
+
+}
+.container p{
+    text-align: center ;
+    color: #3a4a4b;
+}
+.contact{
+    margin-bottom: 24px;
+}
+.title{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+input, textarea, select{
+    width: 100%;
+    padding: 12.8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+}
+textarea{
+    min-height: 150px;
+}
+button{
+    background-color: #265785;
+    color: white;
+    border: none;
+    padding: 12.8px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #1c4063;
+}
+.dividing-line{
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 2px solid #eee;
+}
+.Contact-information{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.thank-you {
+    text-align: center;
+    padding: 30px;
+}
+.thank-you h2 {
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+.thank-you p {
+    color: #7f8c8d;
+}
+.thankyou-porder {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    margin: 40px auto;
+}
+
+.header body{
+    margin: 0px;
+}
+.header {
+    position: block;
+    width: 100%;
+    background-color: #eee;
+    margin-top: 0;
+}
+.logo-nav {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 0px;
+    height: 174px;
+}
+.name_page a img {
+    padding: 50px;
+}
+.search{
+    padding-top: 50px; 
+    margin-top: 10px;
+}
+.search input {
+    color: black;
+    width: 550px;
+    height: 55px;
+    border-style: none;
+    border-radius: 20px;
+    font-size: 20px;
+    padding-left: 15px;
+}
+.search input:hover {
+    background-color: #fff;
+    border: solid 2px;
+}
+.search input:focus {
+    background-color: #fff;
+    border: solid 1px;
+}
+.icons {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 15px;
+    padding: 50px;
+}
+.icons img {
+    height: 35px;
+    width: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: #68badf;
+    padding: 15px;
+}
+.icons a img:hover {
+    background-color: #ffffff;
+}
+.notification{
+    display: none;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: red;
+    top: 60px;
+    right: 60px;
+    z-index: 0;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+}
+
+/* icons */
+
+    .s-icons {
+      display: flex;
+      gap: 22px;
+    }
+    
+    .icon-button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgb(245, 240, 240);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+    }
+    
+    .icon-button svg {
+      width: 25px;
+      height: 25px;
+      
+    }
+    
+    .facebook:hover {
+      background-color: #1877f2;
+    }
+    
+    .facebook:hover svg {
+      fill: white;
+    }
+    
+    .tiktok:hover {
+      background-color: #1a1616;
+    }
+    
+    .tiktok:hover svg {
+      fill: white;
+    }
+    
+    .instagram:hover {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+    
+    .instagram:hover svg {
+      fill: white;
+    }
+    
+    .x:hover {
+      background-color: #000000;
+    }
+    
+    .x:hover svg {
+      fill: white;
+    }
+    
+    .whatsapp:hover {
+      background-color: #25d366;
+    }
+    
+    .whatsapp:hover svg {
+      fill: white;
+    }

@@ -1,0 +1,117 @@
+
+/*Main*/
+
+.main{
+    display: grid;
+    justify-content: center;
+    margin-top: 85px;
+}
+ .login-page{
+  padding: 70px;
+  width: auto;
+  height: auto;
+  border-radius: 15%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* animation-name: animation;
+  animation-timing-function: linear;
+  animation-duration: 1.2s;
+  animation-delay: 0.3s; */
+
+}
+
+/* @keyframes animation {
+  from{
+    transform: translate(0,50px);
+
+  }
+  to{
+    
+
+  }
+
+} */
+.form{
+  display: grid;
+  grid-template-rows: 70px 48px 48px 22px 50px;
+  row-gap: 20px;
+}
+
+.page_name{
+    display: flex;
+    justify-content: center;
+}
+    
+.page_name img{
+    width: 300px;
+    height: 70px;
+}
+
+.check{
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    color: black;
+ }
+.check input{
+    width: 15px;
+    height: 15px;
+}
+
+.Continue {
+  background: #68badf;
+  border-radius: 15px;
+  border-style: none;
+}
+.Continue:hover{
+  background-color: #fff;
+  cursor: pointer;
+  border-style: solid;
+}
+.Continue:active{
+    background-color: #fff;
+}
+.links{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+.links a:link {
+  color:  black;
+  text-decoration: none;
+}
+.links a:visited {
+  color: black;
+}
+.links a:hover {
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.links a:active {
+  color: black;
+} 
+
+input.user {
+  width: 320px;
+  height: 32px;
+  font-size: initial;
+  border-radius: 12px;
+  border: 1px solid rgb(215, 215, 215);
+  box-shadow: 0px 0px 6px 0px #dddddd;
+  padding: 8px;
+}
+input .user:focus{
+  border-style: none;
+}
+input.password {
+  width: 320px;
+  height: 32px;
+  font-size: initial;
+  border-radius: 12px;
+  border: 1px solid rgb(215, 215, 215);
+  box-shadow: 0px 0px 6px 0px #dddddd;    
+  padding: 8px;
+} 
+input.password:focus{
+  border-style: none;
+}
